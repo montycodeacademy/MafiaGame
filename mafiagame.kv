@@ -1,0 +1,47 @@
+Screen:
+    MDNavigationDrawer:
+        id: nav_drawer
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: "10dp"
+            spacing: "10dp"
+
+            BoxLayout:
+                size_hint_y: None
+                height: toptoolbar.height
+
+            AnchorLayout:
+                anchor_x: 'left'
+                anchor_y: 'top'
+                size_hint_y: None
+                height: avatar.height
+
+                Image:
+                    id: avatar
+                    size_hint: None, None
+                    size: "100dp", "100dp"
+                    source:'avatar.png'
+
+            MDLabel:
+                text: 'Email: vmahadasu@yahoo.com'
+                size_hint_y: None
+                font_style: "H6"
+                height: self.texture_size[1]
+
+            MDLabel:
+                text: 'Nickname: Vasu'
+                size_hint_y: None
+                font_style: "Button"
+                height: self.texture_size[1]
+
+            ScrollView:
+
+    BoxLayout:
+        orientation: 'vertical'
+        MDToolbar:
+            id: toptoolbar
+            title: 'MafiaApp'
+            left_action_items: [["menu", lambda x:nav_drawer.set_state('open')]]
+
+        Screen:
