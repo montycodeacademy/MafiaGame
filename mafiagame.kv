@@ -23,17 +23,34 @@ Screen:
                     size: "100dp", "100dp"
                     source:'avatar.png'
 
-            MDLabel:
-                text: 'Email: vmahadasu@yahoo.com'
+            BoxLayout:
+                orientation: 'horizontal'
                 size_hint_y: None
-                font_style: "H6"
-                height: self.texture_size[1]
+                height: email.height
+
+                MDLabel:
+                    text: 'Email:'
+                    size_hint_y: None
+                    font_style: "H6"
+                    height: self.texture_size[1]
+
+                MDTextField:
+                    hint_text: "Enter your e-mail"
+                    id: email
+
+
+
 
             MDLabel:
+                id: nick_name
                 text: 'Nickname: Vasu'
                 size_hint_y: None
                 font_style: "Button"
                 height: self.texture_size[1]
+
+            MDFlatButton:
+                text: 'Get Info'
+                on_press: app.print_info()
 
             ScrollView:
 
