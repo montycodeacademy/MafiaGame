@@ -1,6 +1,7 @@
 Screen:
     MDNavigationDrawer:
         id: nav_drawer
+        on_touch_up: app.update_profile()
 
         BoxLayout:
             orientation: 'vertical'
@@ -23,35 +24,15 @@ Screen:
                     size: "100dp", "100dp"
                     source:'avatar.png'
 
-            BoxLayout:
-                orientation: 'horizontal'
-                size_hint_y: None
-                height: email.height
+            MDTextField:
+                hint_text: "E-mail"
+                id: email
+                on_touch_up:print()
 
-                MDLabel:
-                    text: 'Email:'
-                    size_hint_y: None
-                    font_style: "H6"
-                    height: self.texture_size[1]
-
-                MDTextField:
-                    hint_text: "Enter your e-mail"
-                    id: email
-
-
-
-
-            MDLabel:
-                id: nick_name
-                text: 'Nickname: Vasu'
-                size_hint_y: None
-                font_style: "Button"
-                height: self.texture_size[1]
-
-            MDFlatButton:
-                text: 'Get Info'
-                on_press: app.print_info()
-
+            MDTextField:
+                hint_text: "Nickname"
+                id: nickname
+                on_touch_up:print()
             ScrollView:
 
     BoxLayout:
@@ -62,3 +43,4 @@ Screen:
             left_action_items: [["menu", lambda x:nav_drawer.set_state('open')]]
 
         Screen:
+

@@ -21,8 +21,13 @@ class MafiaGameApp(MDApp):
         :return: None
         '''
 
-    def print_info(self):
-        print(self.root.ids.email.text, self.root.ids.nick_name.text)
+    def update_profile(self):
+        if len(self.root.ids.email.text):
+            print(self.root.ids.email.text)
+        if len(self.root.ids.nickname.text):
+            print(self.root.ids.nickname.text)
+
+        print(self.root.ids.avatar.source)
 
 if __name__ == '__main__':
     MafiaGameApp().run()
