@@ -1,7 +1,8 @@
 Screen:
-    MDNavigationDrawer:
+    PlayerProfile:
         id: nav_drawer
-        on_touch_up: app.update_profile()
+        email: email
+        nickname: nickname
 
         BoxLayout:
             orientation: 'vertical'
@@ -27,12 +28,11 @@ Screen:
             MDTextField:
                 hint_text: "E-mail"
                 id: email
-                on_touch_up:print()
 
             MDTextField:
                 hint_text: "Nickname"
                 id: nickname
-                on_touch_up:print()
+
             ScrollView:
 
     BoxLayout:
@@ -43,4 +43,3 @@ Screen:
             left_action_items: [["menu", lambda x:nav_drawer.set_state('open')]]
 
         Screen:
-
